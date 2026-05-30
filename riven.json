@@ -1,4 +1,4 @@
 {
-    "name": "Riven",
-    "model": "groq/llama-3.3-70b-versatile"
+  "name": "Riven",
+  "model": "groq/llama3-8b-8192"
 }

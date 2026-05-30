@@ -1,6 +1,4 @@
 {
-    "name": "andy",
-
-    "model": "gpt-5.4-mini"
-
+    "name": "Riven",
+    "model": "gemini-1.5-flash"
 }

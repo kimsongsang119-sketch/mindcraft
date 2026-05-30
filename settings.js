@@ -28,14 +28,14 @@ const settings = {
     "relevant_docs_count": 5,
 
     "max_messages": 2,
-    "num_examples": 1,
+    "num_examples": 0,
     "max_commands": 5,
     "show_command_syntax": "brief",
     "narrate_behavior": false,
     "chat_bot_messages": true,
 
     "spawn_timeout": 30,
-    "block_place_delay": 0,
+    "block_place_delay": 10,
     "log_all_prompts": false
 };
 

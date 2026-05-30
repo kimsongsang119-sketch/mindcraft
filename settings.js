@@ -25,7 +25,7 @@ const settings = {
     "allow_vision": false,
     "blocked_actions": [],
     "code_timeout_mins": -1,
-    "relevant_docs_count": 5,
+    "relevant_docs_count": 2,
 
     "max_messages": 2,
     "num_examples": 0,

@@ -55,7 +55,7 @@ export class Gemini {
                 ...(this.params || {})
             }
         });
-        const response = await result.text;
+        const response = result.text();  // ✅ 수정
 
         console.log('Received.');
 
@@ -95,7 +95,7 @@ export class Gemini {
                 },
                 systemInstruction: systemMessage
             });
-            res = await result.text;
+            res = result.text();  // ✅ 수정
             console.log('Received.');
         } catch (err) {
             console.log(err);
@@ -140,7 +140,6 @@ const sendAudioRequest = async (text, model, voice, url) => {
         return null;
     }
 
-    // Wrap PCM in a minimal WAV container so ffplay can decode it.
     const pcmBuffer = Buffer.from(pcmBase64, 'base64');
     const wavHeader = createWavHeader(pcmBuffer.length, 24000, 1, 16);
     const wavBuffer = Buffer.concat([wavHeader, pcmBuffer]);
@@ -149,7 +148,6 @@ const sendAudioRequest = async (text, model, voice, url) => {
     return wavBase64;
 }
 
-// helper: create PCM WAV header
 function createWavHeader(dataLength, sampleRate, channels, bitsPerSample) {
     const header = Buffer.alloc(44);
     const byteRate = sampleRate * channels * bitsPerSample / 8;
@@ -159,8 +157,8 @@ function createWavHeader(dataLength, sampleRate, channels, bitsPerSample) {
     header.writeUInt32LE(36 + dataLength, 4);
     header.write('WAVE', 8);
     header.write('fmt ', 12);
-    header.writeUInt32LE(16, 16); // PCM
-    header.writeUInt16LE(1, 20); // Audio format = PCM
+    header.writeUInt32LE(16, 16);
+    header.writeUInt16LE(1, 20);
     header.writeUInt16LE(channels, 22);
     header.writeUInt32LE(sampleRate, 24);
     header.writeUInt32LE(byteRate, 28);

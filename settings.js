@@ -29,12 +29,12 @@ const settings = {
 
     "max_messages": 2,
     "num_examples": 1,
-    "max_commands": -1,
-    "show_command_syntax": "full",
-    "narrate_behavior": true,
-    "chat_bot_messages": false,
+    "max_commands": 5,
+    "show_command_syntax": "brief",
+    "narrate_behavior": false,
+    "chat_bot_messages": true,
 
-    "spawn_timeout": 30,
+    "spawn_timeout": 5,
     "block_place_delay": 0,
     "log_all_prompts": false
 };

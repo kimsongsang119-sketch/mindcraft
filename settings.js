@@ -27,7 +27,7 @@ const settings = {
     "code_timeout_mins": -1,
     "relevant_docs_count": 5,
 
-    "max_messages": 5,
+    "max_messages": 2,
     "num_examples": 1,
     "max_commands": -1,
     "show_command_syntax": "full",
